@@ -2,9 +2,11 @@ import requests
 import random
 import sys
 
+from requests.models import encode_multipart_formdata
+
 # Make an HTTP GET request to the cat-fact API
 cat_url = "https://cat-fact.herokuapp.com/facts"
-r = requests.get(cat_url)
+r = requests.get(cat_url, encode_multipart_formdata)
 r_obj_list = r.json()
 
 # Create an empty list to store individual facts in
